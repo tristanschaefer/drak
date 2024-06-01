@@ -1,0 +1,16 @@
+﻿## Interface: 100207
+## Title: Drak
+## Notes: This add-on gives you a blank slate to learn to code World of Warcraft add-ons
+## IconTexture: Interface\Icons\Inv_misc_book_03
+## Author: Drakwlya
+## Version: 1.0
+## DefaultState: enabled
+## SavedVariables: DrakDB
+## SavedVariablesPerCharacter:
+## X-License: MIT
+
+# Libraries
+Libs\embeds.xml
+
+# Core
+Drak.lua
