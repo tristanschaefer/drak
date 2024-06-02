@@ -14,3 +14,5 @@ Libs\embeds.xml
 
 # Core
 Drak.lua
+Drak-GUI.lua
+Drak-Utils.lua
