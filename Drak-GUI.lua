@@ -65,6 +65,9 @@ function Drak:GetServerNames()
 end
 
 function Drak:CloseFrame()
+	if not self.mainFrame then
+		return
+	end
 	self.mainFrameShown = false
 	self.mainFrame:Hide()
 end
@@ -87,6 +90,11 @@ function Drak:ShowFrame()
 
 	-- Set the minimum and maximum dimensions
 	local minWidth = 800
+
+	local dialogbg = blizzFrame:CreateTexture(nil, "BACKGROUND")
+	dialogbg:SetColorTexture(0,0,0,1) -- Interface\\Tooltips\\UI-Tooltip-Background
+	dialogbg:SetPoint("TOPLEFT", 8, -24)
+	dialogbg:SetPoint("BOTTOMRIGHT", -6, 8)
 
 	-- Hook the OnUpdate script to enforce size constraints
 	blizzFrame:SetScript("OnUpdate", function(self)
@@ -513,7 +521,7 @@ function Drak:PopulatePlayerLabels(playerRealm, scrollFrame)
 
 	--local sortedTable = Drak:SortPlayerList(playerName, playerRealm)
 	for k, v in pairs(self.db.sv.char) do
-		if v.realm == playerRealm then
+		if v.realm == playerRealm and v.playerLevel and v.playerLevel == GetMaxLevelForLatestExpansion() then
 			self:CreatePlayerLabel(scrollFrame, v, count)
 			count = count + 1
 		end

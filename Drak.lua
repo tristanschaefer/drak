@@ -33,6 +33,7 @@ function Drak:OnEnable()
 	self.db.char.name = UnitName("player")
 	self.db.char.realm = GetRealmName()
 	self.db.char.class = UnitClass("player")
+	self.db.char.playerLevel = UnitLevel("player")
 	
 	-- Get the player's last login time (epoch and formatted)
 	self.db.char.lastLoginEpoch = time()

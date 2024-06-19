@@ -14,6 +14,7 @@ Drak.database_defaults = {
 		name = "",
 		realm = "",
 		class = "",
+		playerLevel = 0,
 		lastLoginFormatted = "",
 		lastLoginEpoch = 0,
 		keystoneName = "None",
